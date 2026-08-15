@@ -42,10 +42,18 @@
 			</h:selectManyMenu>
 			<h:outputText value="Ativo"/>
 			<h:selectBooleanCheckbox value="#{pessoaBean.pessoa.ativo}"/>
-			<h:outputLabel value="Login"/>
+			<h:outputLabel value="Login"/> 
 			<h:inputText value="#{pessoaBean.pessoa.login}"/>
 			<h:outputLabel value="Senha"/>
 			<h:inputSecret value="#{pessoaBean.pessoa.senha}"/>
+			
+			<h:outputText value="Perfil:"/>
+			<h:selectOneMenu id="idPerfil" required="true" value="#{pessoaBean.pessoa.userPerfil}">
+				<f:selectItem itemLabel="----Selecione---" noSelectionOption="true"/>
+				<f:selectItem itemValue="Admin" itemLabel="Administrador(a)"/>
+				<f:selectItem itemValue="Secretario" itemLabel="Secretário(a)"/>
+				<f:selectItem itemValue="Diretor" itemLabel="Diretor(a)"/>
+			</h:selectOneMenu>
 		
 		<h:outputLabel/>
 		<h:panelGroup >

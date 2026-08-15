@@ -28,10 +28,16 @@ public class Pessoa implements Serializable {
 	private Boolean ativo;
 	private String login;
 	private String senha;
-	
+	private String userPerfil;
 	
 
 	public Pessoa() {
+	}
+	public String getUserPerfil() {
+		return userPerfil;
+	}
+	public void setUserPerfil(String userPerfil) {
+		this.userPerfil = userPerfil;
 	}
 	public void setLogin(String login) {
 		this.login = login;
