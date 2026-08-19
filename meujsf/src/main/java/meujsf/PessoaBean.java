@@ -67,13 +67,18 @@ public class PessoaBean {
 		if(usuario != null) {
 			//adicionar o usuario na sessão
 			FacesContext context = FacesContext.getCurrentInstance();
-			
 			ExternalContext externalContext = context.getExternalContext();
 			externalContext.getSessionMap().put("usuarioLogado", usuario);
-			
 			return "pagina.jsf";
 		}
 		return "index.jsf";
+	}
+	//metodo que permiti ao usuario ter acesso ao sistema
+	public boolean permitirAcesso(String acesso) {
+		FacesContext context = FacesContext.getCurrentInstance();
+		ExternalContext externalContext = context.getExternalContext();
+		Pessoa user = (Pessoa) externalContext.getSessionMap().get("usuarioLogado");
+		return user.getUserPerfil().equals(acesso);
 	}
 	
 }
