@@ -8,8 +8,13 @@
 </h:head>
 
 <h:body>
+	<h:form>
+		<h:commandLink value="Trocar Usuario" action="index" style="margin-left: 3cm;"/>
+		<h:commandLink value="Home" action="pagina" style="margin-left: 3cm;"/>
+		<h:commandLink value="Lançamentos" action="lancamento" style="margin-left: 3cm;"/>
+	</h:form>
 	
-	<h:form id="formPessoa">
+	<h:form id="formPessoa" rendered="#{pessoaBean.permitirAcesso('Admin')}">
 		
 		<h:panelGrid columns="2">
 			<f:facet name="header">
