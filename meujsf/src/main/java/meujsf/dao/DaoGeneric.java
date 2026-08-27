@@ -51,7 +51,7 @@ public class DaoGeneric <E> {
 		
 		List<E> objetos = entityManager.createQuery(" from "+entidade.getName()).getResultList();
 		transaction.commit();
-		entityManager.clear();
+		entityManager.close();
 		
 		return objetos;
 	}

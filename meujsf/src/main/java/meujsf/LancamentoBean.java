@@ -36,7 +36,7 @@ public class LancamentoBean {
 	}
 	
 	@PostConstruct
-	private void carregarLancamento() {
+	public void carregarLancamento() {
 		FacesContext context = FacesContext.getCurrentInstance();
 		ExternalContext externalContext = context.getExternalContext();
 		Pessoa user = (Pessoa) externalContext.getSessionMap().get("usuarioLogado");

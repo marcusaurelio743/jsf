@@ -19,7 +19,8 @@ public class IdaoLancamentoImpl implements IdaoLancamento {
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
 		lancamentos = entityManager.createQuery(" from Lancamento where pessoa_id = "+codUser).getResultList();
-		
+		transaction.commit();
+		entityManager.close();
 		return lancamentos;
 	}
 
